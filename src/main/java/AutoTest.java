@@ -12,7 +12,7 @@ public class AutoTest {
         System.setProperty("webdriver.chrome.driver","C:\\IdeaProjects\\AutomationTest\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(co);
         driver.get("https://demoqa.com/");
-        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
         //driver.wait(3000);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -24,8 +24,17 @@ public class AutoTest {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//a[contains(text(),'Git Pocket Guide')]")).click();
 
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@id='login']"));
+        //Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@id='login']")).click();
+        driver.findElement(By.xpath("//button[@id='newUser']")).click();
+        driver.findElement(By.cssSelector("#firstname")).sendKeys("John");
+        driver.findElement(By.cssSelector("#lastname")).sendKeys("Smith");
+        driver.findElement(By.cssSelector("#userName")).sendKeys("John");
+        driver.findElement(By.cssSelector("#password")).sendKeys("Test6tg6ug1");
+        driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.cssSelector("#register")).click();
+
 
 
 
