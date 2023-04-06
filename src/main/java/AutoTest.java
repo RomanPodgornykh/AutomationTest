@@ -11,15 +11,24 @@ public class AutoTest {
         co.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver","C:\\IdeaProjects\\AutomationTest\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(co);
-        driver.manage().window().fullscreen();
         driver.get("https://demoqa.com/");
-
-        //driver.wait(5000);
+        driver.manage().window().fullscreen();
+        //driver.wait(3000);
 
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("scrollBy(0,2500)");
-        //driver.findElement(By.cssSelector("//h5[contains(text(),'Book Store Application')]")).click();
-        driver.findElement(By.cssSelector("div.body-height:nth-child(2) div.home-content div.home-body div.category-cards div.card.mt-4.top-card:nth-child(6) div:nth-child(1) div.card-body > h5:nth-child(1)")).click();
+
+        driver.findElement(By.xpath("//h5[contains(text(),'Book Store Application')]")).click();
+
+        //js.executeScript("scrollBy(0,2500)");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[contains(text(),'Git Pocket Guide')]")).click();
+
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@id='login']"));
+
+
+
 
 
     }
