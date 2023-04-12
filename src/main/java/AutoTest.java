@@ -31,8 +31,8 @@ public class AutoTest {
         driver.findElement(By.cssSelector("#lastname")).sendKeys("Smith");
         driver.findElement(By.cssSelector("#userName")).sendKeys("John");
         driver.findElement(By.cssSelector("#password")).sendKeys("Test6tg6ug1");
-        driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']")).click();
-        Thread.sleep(5000);
+        //driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']")).click();
+        //Thread.sleep(5000);
         driver.findElement(By.cssSelector("#register")).click();
         driver.quit();
 
