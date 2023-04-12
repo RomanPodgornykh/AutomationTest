@@ -34,6 +34,7 @@ public class AutoTest {
         driver.findElement(By.xpath("//div[@class='recaptcha-checkbox-border']")).click();
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("#register")).click();
+        driver.quit();
 
 
 
