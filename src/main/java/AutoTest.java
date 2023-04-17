@@ -11,10 +11,10 @@ public class AutoTest {
         co.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver","C:\\IdeaProjects\\AutomationTest\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(co);
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-        //driver.wait(3000);
 
+        driver.get("https://demoqa.com/");
+        //driver.wait(3000);
+        driver.manage().window().maximize();
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("scrollBy(0,2500)");
 

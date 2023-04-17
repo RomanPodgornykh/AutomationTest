@@ -1,39 +1,44 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SignupPageObject {
-    private static WebElement element = null;
-    public static WebElement button_login(WebDriver driver){
-        element = driver.findElement(By.xpath("//button[@id='login']"));
-        return element;
-    }
-    public static WebElement button_newuser(WebDriver driver){
-        element = driver.findElement(By.xpath("//button[@id='newUser']"));
-        return element;
-    }
-    public static WebElement field_firstname(WebDriver driver){
-        element = driver.findElement(By.cssSelector("#firstname"));
-        return element;
-    }
-    public static WebElement field_lastname(WebDriver driver){
-        element = driver.findElement(By.cssSelector("#lastname"));
-        return element;
-    }
-    public static WebElement field_username(WebDriver driver){
-        element = driver.findElement(By.cssSelector("#userName"));
-        return element;
-    }
-    public static WebElement field_password(WebDriver driver){
-        element = driver.findElement(By.cssSelector("#password"));
-        return element;
+    WebDriver driver = null;
+    By loginbtn = By.xpath("//button[@id='login']");
+    By newuserbtn = By.xpath("//button[@id='newUser']");
+    By firstname = By.cssSelector("#firstname");
+    By lastname = By.cssSelector("#lastname");
+    By username = By.cssSelector("#userName");
+    By password = By.cssSelector("#password");
+    By registerbtn = By.cssSelector("#register");
+
+    public SignupPageObject(WebDriver driver){
+         this.driver = driver;
     }
 
-    public static WebElement button_register(WebDriver driver){
-        element = driver.findElement(By.cssSelector("#register"));
-        return element;
+    public void clickLoginButton() {
+        driver.findElement(loginbtn).sendKeys(Keys.RETURN);
     }
 
+    public void clickNewuserButton() {
+        driver.findElement(newuserbtn).sendKeys(Keys.RETURN);
+    }
+    public void setFirstname(String text){
+        driver.findElement(firstname).sendKeys(text);
+    }
+    public void setLastname(String text){
+        driver.findElement(lastname).sendKeys(text);
+    }
+    public void setUsername(String text){
+        driver.findElement(username).sendKeys(text);
+    }
+    public void setPassword(String text){
+       driver.findElement(password).sendKeys(text);
+    }
+    public void clickRegisterButton(){
+        driver.findElement(registerbtn).sendKeys(Keys.RETURN);
+    }
 }
