@@ -16,15 +16,15 @@ public class SignupPageObject {
     By registerbtn = By.cssSelector("#register");
 
     public SignupPageObject(WebDriver driver){
-         this.driver = driver;
+        this.driver = driver;
     }
 
     public void clickLoginButton() {
-        driver.findElement(loginbtn).sendKeys(Keys.RETURN);
+        driver.findElement(loginbtn).click();
     }
 
     public void clickNewuserButton() {
-        driver.findElement(newuserbtn).sendKeys(Keys.RETURN);
+        driver.findElement(newuserbtn).click();
     }
     public void setFirstname(String text){
         driver.findElement(firstname).sendKeys(text);
@@ -36,9 +36,9 @@ public class SignupPageObject {
         driver.findElement(username).sendKeys(text);
     }
     public void setPassword(String text){
-       driver.findElement(password).sendKeys(text);
+        driver.findElement(password).sendKeys(text);
     }
     public void clickRegisterButton(){
-        driver.findElement(registerbtn).sendKeys(Keys.RETURN);
+        driver.findElement(registerbtn).click();
     }
 }
