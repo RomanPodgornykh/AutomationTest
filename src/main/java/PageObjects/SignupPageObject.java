@@ -41,4 +41,5 @@ public class SignupPageObject {
     public void clickRegisterButton(){
         driver.findElement(registerbtn).click();
     }
+
 }
