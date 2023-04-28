@@ -2,6 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class LoginPageObject {
@@ -11,7 +12,8 @@ public class LoginPageObject {
         By username = By.cssSelector("#userName");
         By password = By.cssSelector("#password");
 
-public LoginPageObject(WebDriver driver){this.driver = driver};
+public LoginPageObject(WebDriver driver){
+    this.driver = driver;};
     public void clickLoginButton() {
         driver.findElement(loginbtn).click();
     }
@@ -20,8 +22,11 @@ public LoginPageObject(WebDriver driver){this.driver = driver};
     public void VerifyLogin(){
         driver.findElement(loginbtn).click();
         String title = driver.getTitle();
-        Assert.assertEquals(title, "Login page");
-
+        //Assert.assertEquals(title, "DEMOQA");
+        WebElement wellcomeMessage = driver.findElement(By.xpath("//label[@id='userName-value']"));
+        WebElement welcomeMessage = null;
+        Assert.assertTrue(welcomeMessage.isDisplayed(), "JohnTron");
+        driver.close();
     }
 
 
