@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+//locators
 public class SignupPageObject {
     WebDriver driver = null;
     By loginbtn = By.xpath("//button[@id='login']");
@@ -15,10 +16,12 @@ public class SignupPageObject {
     By password = By.cssSelector("#password");
     By registerbtn = By.cssSelector("#register");
 
+//constructor
     public SignupPageObject(WebDriver driver){
         this.driver = driver;
     }
 
+//methods
     public void clickLoginButton() {
         driver.findElement(loginbtn).click();
     }

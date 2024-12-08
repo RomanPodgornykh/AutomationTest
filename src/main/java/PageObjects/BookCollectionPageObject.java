@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class BookCollectionPageObject {
     WebDriver driver = null;
 
+// locators
     By profilebtn = By.xpath("//span[contains(text(),'Profile')]");
     By imagebtn = By.xpath("//div[contains(text(),'Image')]");
     By titlebtn = By.xpath("//div[contains(text(),'Image')]");
@@ -14,9 +15,12 @@ public class BookCollectionPageObject {
     By actionbtn = By.xpath("//div[contains(text(),'Action')]");
     By deleteallbooksbtn = By.cssSelector("#submit");
 
+//constructor
     public BookCollectionPageObject(WebDriver driver) {
         this.driver = driver;
     }
+
+//methods
     public void clickprofilebtn(){driver.findElement(profilebtn).click();}
     public void clickimagebtn(){driver.findElement(imagebtn).click();}
     public void clicktitlebtn(){driver.findElement(titlebtn).click();}

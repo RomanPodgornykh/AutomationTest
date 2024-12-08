@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+//locators
 public class LoginPageObject {
 
         WebDriver driver = null;
@@ -12,8 +13,12 @@ public class LoginPageObject {
         By username = By.cssSelector("#userName");
         By password = By.cssSelector("#password");
 
+
+//constructor
 public LoginPageObject(WebDriver driver){
     this.driver = driver;};
+
+//methods
     public void clickLoginButton() {
         driver.findElement(loginbtn).click();
     }
